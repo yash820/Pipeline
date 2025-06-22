@@ -1,21 +1,19 @@
-# name: Single Workflow Variable
-# on:
-#   push:
-#     branches: [ "main" ]
-#   pull_request:
-#     branches: [ "main" ]
-#   workflow_dispatch:
-# env:
-#   cloud: GCP
+name: Configuration Variable Workflow
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+env:
+  cloud: GCP
 
-# jobs:
-#   GCP-Deployment :
-#     runs-on: ubuntu-latest
-#     env:
-#       resource: Bucket
-#     steps:
-#       - name: Run Deplyment pipeline
-#         env:
-#           owner: Yash
-#         run: echo "First $resource is deployed in $cloud by developer $owner !"
+jobs:
+  GCP-Deployment :
+    runs-on: ubuntu-latest
+    env:
+      resource: Bucket
+    steps:
+      - name: Run Deplyment pipeline
+        run: echo "First $resource is deployed in $cloud by Yash in project ${{PROJECT_ID}} !"
      
