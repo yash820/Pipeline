@@ -1,4 +1,4 @@
-name: Configuration Variable Workflow
+name: Adding two number Workflow
 on:
   workflow_dispatch:
     inputs:
