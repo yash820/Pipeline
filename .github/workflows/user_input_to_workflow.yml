@@ -17,6 +17,6 @@ jobs:
     steps:
       - name: Add number
         id: sum
-        run: echo "::set-output name=sum::$((inputs.num1}} + ${{inputs.num2}}))"
+        run: echo "::set-output name=sum::$((${{inputs.num1}} + ${{inputs.num2}}))"
       - name: Display sum 
         run: echo "The sum is ${{steps.sum.outputs.sum}}"
