@@ -14,6 +14,6 @@ jobs:
     env:
       resource: Bucket
     steps:
-      - name: Run Deplyment pipeline
+      - name: Test configuration variable
         run: echo "First $resource is deployed in $cloud by Yash in project ${{PROJECT_ID}} !"
      
