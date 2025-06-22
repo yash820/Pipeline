@@ -1,0 +1,22 @@
+name: Configuration Variable Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      num1:
+        description: "Entre first number"
+        default: '0'
+        required: true
+      num2:
+        description: "Entre second number"
+        default: '0'
+        required: true
+        
+jobs:
+  Adding-two-number :
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add number
+        id: sum
+        run: echo "::set output name=sum::$((inputs.num1}} + ${{inputs.num1}}))"
+      - name: Display sum 
+        run: echo "The sum is ${{steps.sum.outputs.sum}}"
