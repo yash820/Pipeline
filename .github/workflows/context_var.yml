@@ -1,15 +1,19 @@
 name: Context Variable Workflow
 on:
+  push:
+    branches: ["main"]
+  
   workflow_dispatch: # for manual trigger of an workflow
 env:
   cloud: GCP
 
 jobs:
-  GCP-Deployment :
+  Test-Context-Variable :
     runs-on: ubuntu-latest
     steps:
       - name: Test context variable
         run: |
           echo "Repository name :-  ${{github.repository}}"
-          echo "Repository name :-  ${{github.workflow}}"
-     
+          echo "workflow name :-  ${{github.workflow}}"
+          echo "job name :-  ${{github.job}}"
+          echo "Token Value :-  ${{github.token}}"
