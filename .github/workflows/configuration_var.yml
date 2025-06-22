@@ -15,5 +15,5 @@ jobs:
       resource: Bucket
     steps:
       - name: Test configuration variable
-        run: echo "First $resource is deployed in $cloud by Yash in project ${{PROJECT_ID}} !"
+        run: echo "First $resource is deployed in $cloud by Yash in project ${{vars.PROJECT_ID}} !"
      
